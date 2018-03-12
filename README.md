@@ -30,7 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 -	This project is generated with Angular CLI version 1.5.2.
 -	Before running the project make sure you have the Angular version 5 installed.
 -	Download and unzip the project folder.
--	If you have downloaded the project from github make sure to add the provided angular-cli.json in to the project folder.
 -	Open the project folder path in command prompt.
 -	Run npm install command.
 -	Run ng serve command to run the project.
@@ -41,10 +40,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 -	You can also add the items using add to cart button.
 -	The number of items in the quantity box will be added to the cart when the add to cart button is clicked
 -	You can view
-    The total number of items added to the cart, 
-    calculated total cost for each item.
-    Each item quantity added to the cart.
-    Total cart value.
+    -The total number of items added to the cart, 
+    -calculated total cost for each item.
+    -Each item quantity added to the cart.
+    -Total cart value.
 -	You can delete each item from cart or clear total cart.
 -	Search for an item and matched items are displayed.
 -	You can add more items by clicking add more add items button.
