@@ -1,0 +1,31 @@
+<div id="cart">
+  <div id="cart-header" class="row">
+    <div class="col">
+        <h4 class="text-muted" style="float: left;">
+          Cart <span>({{cartItems.length}})</span>
+        </h4>
+        <button class="btn btn-danger btn-sm" type="button" style="float: right;" (click)="clearCart()">Clear</button>
+    </div>
+  </div>
+  <hr>
+  <div id="cart-items">
+    <p class="text-center" *ngIf="cartItems.length == 0">
+      Nothing in cart yet..!
+    </p>
+    <div *ngIf="cartItems.length > 0">
+      <div  *ngFor="let item of cartItems" class="row" style="padding: .5rem;">
+        <div class="col" style="text-align: right;">{{item.product.name}}</div>
+        <div class="col" style="text-align: right;"><small>x {{item.quantity}}</small></div>
+        <div class="col" style="text-align: right;"><h6>$ {{item.cost}}</h6></div>
+        <div class="col text-danger" style="text-align: right">
+          <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeItemFromCart(item)">X</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col" style="text-align: right;"><h5>Amount Due: </h5></div>
+        <div class="col" style="text-align: right;"><h5>$ {{orderTotal}}</h5></div>
+      </div>
+    </div>
+  </div>
+</div>

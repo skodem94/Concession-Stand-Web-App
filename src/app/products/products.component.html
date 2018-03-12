@@ -1,0 +1,35 @@
+<div id="products" class="container-fluid">
+    <div class="row" style="text-align: center">
+        <h4 class="col-sm-3">Search Items : </h4>
+        <div class="col-sm-5">
+            <input class="form-control form-control-sm" type="text" [(ngModel)]="keyword" name="keyword"
+                placeholder="Search">
+        </div>
+        <div class="col-sm-2">
+                <button type="button" class="btn btn-primary btn-sm" routerLink="/add" style="float: right;">Add More Items</button>
+            </div>
+    </div>
+    <div class="row">
+        <div class="card m-3" style="width: 17rem;" *ngFor="let product of products | filterProducts : keyword">
+            <img class="card-img-top" src="{{product.image}}" alt="{{product.name}}" height="240px">
+            <div class="card-body">
+                <h4 class="card-title">{{product.name}}</h4>
+                <h5 class="card-text">$ {{product.price}}</h5>
+                <p class="card-text" style="min-height: 20px;">
+                    <small class="deal" *ngIf="product.deal">* Deal available</small>
+                </p>
+                <form class="card-text mb-3" #f="ngForm" (ngSubmit)="addToCart(product, quantity.value)" validate>
+                    <div class="form-group">
+                      <div class="row"> <label class = "col-md-5" for="quantity">
+                            <small class="bold"> Quantity : </small>
+                        </label>
+                        <input class="form-control form-control-sm col-sm-5" type="number" #quantity name="quantity" value="1" min="1" style="width: 80px;"
+                            required/></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm ">Add to cart</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

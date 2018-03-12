@@ -1,0 +1,37 @@
+<div id="addProduct" class="container p-5">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form name="addProductForm" #f="ngForm" (ngSubmit)="f.form.valid && addProduct()" class="p-5" style="background-color:white; border: 2px solid #e6e6e6; box-shadow: 0px 0px 5px 5px #f2f2f2;" novalidate>
+        <h5>Add Product</h5>
+        <hr>
+        <div class="form-group row mt-5">
+          <label for="productName" class="col-sm-2 col-form-label">* Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.name" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="productPrice" class="col-sm-2 col-form-label">* Price</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="productPrice" name="productPrice" [(ngModel)]="product.price" required>
+          </div>
+        </div>
+        <div class="form-group row mb-5">
+          <label for="productImage" class="col-sm-2 col-form-label"> &nbsp; Image</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="productImage" name="productImage" [(ngModel)]="product.image" placeholder="Provide URL for image">
+            <small id="emailHelp" class="form-text text-muted">Default image will be added if no image is given.</small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="offset-sm-2 col">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button class="btn btn-outline-secondary" routerLink="/home">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
